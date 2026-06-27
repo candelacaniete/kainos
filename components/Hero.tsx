@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Nav from '@/components/Nav';
 
 function TeapotIcon() {
@@ -15,6 +16,14 @@ function TeapotIcon() {
 export default function Hero() {
   return (
     <header className="hero" id="inicio">
+      <Image
+        src="/images/hero.jpg"
+        alt=""
+        fill
+        priority
+        className="hero__bg"
+        sizes="100vw"
+      />
       <div className="hero__overlay" />
       <Nav />
       <div className="hero__content fade-in">
