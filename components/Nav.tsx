@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Logo from '@/components/Logo';
 
 const navLinks = [
   { href: '#inicio', label: 'INICIO' },
@@ -44,9 +45,7 @@ export default function Nav() {
       }
     >
       <a href="#inicio" className="nav__logo">
-        <span className="nav__stars">★ ★ ★</span>
-        <span className="nav__brand">KAINOS</span>
-        <span className="nav__tagline">— HELADO ARTESANAL —</span>
+        <Logo priority />
       </a>
 
       <button

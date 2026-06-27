@@ -1,4 +1,5 @@
 import FadeUp from '@/components/FadeUp';
+import Logo from '@/components/Logo';
 import TeapotWatermark from '@/components/TeapotWatermark';
 
 function BagIcon() {
@@ -25,9 +26,7 @@ export default function CtaFooter() {
       <footer className="footer">
         <div className="container footer__inner">
           <div className="footer__logo">
-            <span className="nav__stars">★ ★ ★</span>
-            <span className="nav__brand">KAINOS</span>
-            <span className="nav__tagline">— HELADO ARTESANAL —</span>
+            <Logo />
           </div>
           <p className="footer__copy">&copy; 2026 Kainos. Todos los derechos reservados.</p>
         </div>

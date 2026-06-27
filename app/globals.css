@@ -226,32 +226,19 @@ ul {
 
 .nav__logo {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   flex-shrink: 0;
 }
 
-.nav__stars {
-  font-size: 0.55rem;
-  letter-spacing: 0.3em;
-  color: var(--color-gold);
-  margin-bottom: 0.15rem;
+.logo {
+  width: auto;
+  height: auto;
+  max-height: 52px;
+  object-fit: contain;
 }
 
-.nav__brand {
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  line-height: 1;
-}
-
-.nav__tagline {
-  font-size: 0.5rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  opacity: 0.8;
-  margin-top: 0.2rem;
+.footer__logo .logo {
+  max-height: 48px;
 }
 
 .nav__menu {
@@ -537,9 +524,7 @@ ul {
 
 .footer__logo {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: var(--color-cream);
+  align-items: center;
 }
 
 .footer__copy {
