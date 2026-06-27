@@ -5,17 +5,28 @@ type TeapotWatermarkProps = {
 };
 
 export default function TeapotWatermark({ small = false }: TeapotWatermarkProps) {
+  if (small) {
+    return (
+      <div className="teapot-watermark teapot-watermark--small" aria-hidden="true">
+        <Image
+          src="/images/grabado-pared.png"
+          alt=""
+          width={140}
+          height={245}
+          className="teapot-watermark__img"
+        />
+      </div>
+    );
+  }
+
   return (
-    <div
-      className={`teapot-watermark${small ? ' teapot-watermark--small' : ''}`}
-      aria-hidden="true"
-    >
+    <div className="section__grabado" aria-hidden="true">
       <Image
-        src="/images/teapot.png"
+        src="/images/grabado-pared.png"
         alt=""
-        width={small ? 140 : 320}
-        height={small ? 114 : 260}
-        className="teapot-watermark__img"
+        fill
+        sizes="55vw"
+        className="section__grabado-img"
       />
     </div>
   );

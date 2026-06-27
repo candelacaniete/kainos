@@ -4,7 +4,7 @@ import TeapotWatermark from '@/components/TeapotWatermark';
 
 export default function LocationsSection() {
   return (
-    <section className="section section--light" id="locales">
+    <section className="section section--light section--grabado" id="locales">
       <TeapotWatermark />
       <div className="container section__grid">
         <FadeUp className="section__text">

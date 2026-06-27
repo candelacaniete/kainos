@@ -13,7 +13,6 @@ export default function Hero() {
         className="hero__bg"
         sizes="100vw"
       />
-      <div className="hero__overlay" aria-hidden="true" />
       <Nav />
       <div className="hero__content fade-in">
         <h1 className="hero__title">Hay lugares que se sienten como en casa.</h1>

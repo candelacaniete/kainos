@@ -192,19 +192,6 @@ ul {
   z-index: 0;
 }
 
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    105deg,
-    rgba(45, 28, 18, 0.72) 0%,
-    rgba(45, 28, 18, 0.45) 42%,
-    rgba(45, 28, 18, 0.2) 68%,
-    rgba(45, 28, 18, 0.05) 100%
-  );
-  z-index: 1;
-}
-
 /* ---- Navigation ---- */
 .nav {
   position: fixed;
@@ -228,15 +215,15 @@ ul {
 }
 
 .nav__stars {
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   letter-spacing: 0.3em;
   color: var(--color-gold);
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.2rem;
 }
 
 .nav__brand {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   line-height: 1;
@@ -244,11 +231,11 @@ ul {
 }
 
 .nav__tagline {
-  font-size: 0.5rem;
+  font-size: 0.58rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   opacity: 0.85;
-  margin-top: 0.2rem;
+  margin-top: 0.25rem;
   color: var(--color-cream);
 }
 
@@ -341,6 +328,26 @@ ul {
     url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d9c3a3' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
+.section--grabado {
+  background-color: #E8D8C3;
+  background-image: none;
+}
+
+.section__grabado {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: clamp(280px, 48vw, 560px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.section__grabado-img {
+  object-fit: cover;
+  object-position: left center;
+}
+
 .section--dark {
   background-color: var(--color-dark);
   color: var(--color-cream);
@@ -401,36 +408,22 @@ ul {
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
-/* ---- Tetera grabada ---- */
-.teapot-watermark {
-  position: absolute;
-  left: -2%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: clamp(200px, 28vw, 380px);
-  opacity: 0.06;
-  pointer-events: none;
-  z-index: 1;
-}
-
+/* ---- Grabado de pared ---- */
 .teapot-watermark--small {
+  position: absolute;
   left: auto;
   right: 10%;
   top: 28%;
-  transform: none;
   width: 110px;
-  opacity: 0.05;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .teapot-watermark__img {
   width: 100%;
   height: auto;
   object-fit: contain;
-  mix-blend-mode: multiply;
-}
-
-.teapot-watermark--small .teapot-watermark__img {
-  mix-blend-mode: soft-light;
 }
 
 /* ============================================
@@ -451,13 +444,13 @@ ul {
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
-  min-height: 100px;
+  min-height: 130px;
 }
 
 .rituals-grid__img {
   width: auto;
-  height: 100px;
-  max-width: 120px;
+  height: 130px;
+  max-width: 156px;
   object-fit: contain;
 }
 
@@ -611,10 +604,8 @@ ul {
     padding-bottom: 4rem;
   }
 
-  .teapot-watermark {
-    width: 160px;
-    left: -8%;
-    opacity: 0.04;
+  .section__grabado {
+    width: clamp(200px, 55vw, 320px);
   }
 }
 
