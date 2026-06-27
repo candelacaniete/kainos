@@ -334,59 +334,57 @@ ul {
   padding: clamp(6rem, 14vw, 10rem) 0;
 }
 
+.section--about {
+  padding: clamp(6rem, 14vw, 10rem) 0;
+  overflow: hidden;
+}
+
 .section--locations {
   padding: clamp(6rem, 14vw, 10rem) 0;
   overflow: hidden;
 }
 
-.section__grid {
+/* ============================================
+   NOSOTROS — Editorial
+   ============================================ */
+.about {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(3rem, 8vw, 7rem);
   align-items: center;
-}
-
-.section__text {
   position: relative;
   z-index: 2;
 }
 
-.section__text p {
+.about__text {
+  position: relative;
+  z-index: 2;
+  max-width: 400px;
+  padding-right: clamp(1rem, 3vw, 2rem);
+}
+
+.about__body p {
   font-size: 0.95rem;
-  line-height: 1.8;
+  font-weight: 300;
+  line-height: 2;
   color: var(--color-copper);
-  margin-bottom: 0.75rem;
 }
 
-.section__text p:last-of-type {
-  margin-bottom: 0;
+.about__body p + p {
+  margin-top: 1.5rem;
 }
 
-.section__image img {
-  border-radius: var(--radius);
+.about__text .link-arrow {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.about__photo img {
   width: 100%;
-  aspect-ratio: 4/3;
+  height: auto;
+  display: block;
   object-fit: cover;
-  box-shadow: 0 8px 30px rgba(75, 46, 32, 0.12);
-}
-
-.section__images-duo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.section__images-duo img {
-  border-radius: var(--radius);
-  width: 100%;
-  aspect-ratio: 4/5;
-  object-fit: cover;
-  box-shadow: 0 8px 30px rgba(75, 46, 32, 0.12);
-}
-
-.section__header {
-  text-align: center;
-  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  border-radius: 0;
+  box-shadow: none;
 }
 
 /* ---- Teapot Watermark ---- */
@@ -701,6 +699,7 @@ ul {
     gap: clamp(3rem, 6vw, 4rem) clamp(2rem, 4vw, 3rem);
   }
 
+  .about,
   .locations {
     grid-template-columns: 1fr;
     gap: clamp(4rem, 8vw, 5rem);
@@ -747,18 +746,6 @@ ul {
 
   .nav__cta {
     display: none;
-  }
-
-  .section__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section__image {
-    order: -1;
-  }
-
-  .section__images-duo {
-    grid-template-columns: 1fr 1fr;
   }
 
   .hero__content {
