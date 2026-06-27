@@ -30,31 +30,30 @@ const rituals = [
 
 export default function RitualsSection() {
   return (
-    <section className="section section--dark" id="rituales">
+    <section className="section section--dark section--rituals" id="rituales">
       <div className="container">
-        <FadeUp className="section__header">
+        <FadeUp className="rituals__header">
           <h2 className="section__title section__title--light">Pequeños rituales</h2>
           <span className="label label--gold">ELEGÍ TU MOMENTO FAVORITO</span>
         </FadeUp>
-        <div className="rituals-grid">
-          {rituals.map((ritual) => (
-            <FadeUp key={ritual.title}>
-              <article className="ritual-card">
-                <div className="ritual-card__icon">
-                  <Image
-                    src={ritual.image}
-                    alt=""
-                    width={120}
-                    height={120}
-                    className="ritual-card__img"
-                  />
-                </div>
-                <h3 className="ritual-card__title">{ritual.title}</h3>
-                <p className="ritual-card__text">{ritual.text}</p>
-                <a href="#" className="ritual-card__link">
-                  {ritual.link}
-                </a>
-              </article>
+
+        <div className="rituals__columns">
+          {rituals.map((ritual, index) => (
+            <FadeUp key={ritual.title} className={`rituals__column rituals__column--${index + 1}`}>
+              <div className="rituals__illus">
+                <Image
+                  src={ritual.image}
+                  alt=""
+                  width={100}
+                  height={80}
+                  className="rituals__illus-img"
+                />
+              </div>
+              <h3 className="rituals__title">{ritual.title}</h3>
+              <p className="rituals__text">{ritual.text}</p>
+              <a href="#" className="rituals__link">
+                {ritual.link}
+              </a>
             </FadeUp>
           ))}
         </div>
