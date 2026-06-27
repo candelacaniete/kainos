@@ -26,6 +26,7 @@ export default function TeapotWatermark({ small = false }: TeapotWatermarkProps)
         alt=""
         fill
         sizes="55vw"
+        quality={100}
         className="section__grabado-img"
       />
     </div>

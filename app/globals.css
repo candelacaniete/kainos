@@ -192,6 +192,19 @@ ul {
   z-index: 0;
 }
 
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(38, 24, 14, 0.68) 0%,
+    rgba(38, 24, 14, 0.38) 38%,
+    rgba(38, 24, 14, 0.12) 58%,
+    transparent 75%
+  );
+  z-index: 1;
+}
+
 /* ---- Navigation ---- */
 .nav {
   position: fixed;
@@ -204,7 +217,18 @@ ul {
   align-items: center;
   padding: 1.5rem clamp(1.25rem, 4vw, 2.5rem);
   gap: 1rem;
+  background: linear-gradient(
+    180deg,
+    rgba(38, 24, 14, 0.82) 0%,
+    rgba(38, 24, 14, 0.48) 55%,
+    transparent 100%
+  );
   transition: background var(--transition), backdrop-filter var(--transition);
+}
+
+.nav--scrolled {
+  background: rgba(38, 24, 14, 0.92);
+  backdrop-filter: blur(8px);
 }
 
 .nav__logo {
@@ -329,7 +353,7 @@ ul {
 }
 
 .section--grabado {
-  background-color: #E8D8C3;
+  background-color: #e5d2bb;
   background-image: none;
 }
 
@@ -349,7 +373,7 @@ ul {
 }
 
 .section--dark {
-  background-color: var(--color-dark);
+  background-color: #26180e;
   color: var(--color-cream);
 }
 

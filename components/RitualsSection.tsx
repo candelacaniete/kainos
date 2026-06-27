@@ -43,8 +43,9 @@ export default function RitualsSection() {
                 <Image
                   src={ritual.image}
                   alt=""
-                  width={156}
-                  height={156}
+                  width={312}
+                  height={312}
+                  quality={100}
                   className="rituals-grid__img"
                 />
               </div>

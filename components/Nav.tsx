@@ -26,14 +26,7 @@ export default function Nav() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav
-      className="nav"
-      style={
-        scrolled
-          ? { background: 'rgba(75, 46, 32, 0.92)', backdropFilter: 'blur(8px)' }
-          : { background: 'transparent', backdropFilter: 'none' }
-      }
-    >
+    <nav className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
       <a href="#inicio" className="nav__logo">
         <span className="nav__stars">★ ★ ★</span>
         <span className="nav__brand">KAINOS</span>
