@@ -13,8 +13,8 @@
   --color-text-light: #F3E7D6;
   --color-text-muted: #c9b49a;
 
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Lato', 'Source Sans 3', sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-lato), 'Source Sans 3', sans-serif;
 
   --radius: 14px;
   --radius-btn: 8px;
