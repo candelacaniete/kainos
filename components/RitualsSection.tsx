@@ -37,15 +37,15 @@ export default function RitualsSection() {
           <span className="label label--gold">ELEGÍ TU MOMENTO FAVORITO</span>
         </FadeUp>
 
-        <div className="rituals__columns">
-          {rituals.map((ritual, index) => (
-            <FadeUp key={ritual.title} className={`rituals__column rituals__column--${index + 1}`}>
+        <div className="rituals__composition">
+          {rituals.map((ritual) => (
+            <div key={ritual.title} className="rituals__item">
               <div className="rituals__illus">
                 <Image
                   src={ritual.image}
                   alt=""
-                  width={100}
-                  height={80}
+                  width={180}
+                  height={160}
                   className="rituals__illus-img"
                 />
               </div>
@@ -54,7 +54,7 @@ export default function RitualsSection() {
               <a href="#" className="rituals__link">
                 {ritual.link}
               </a>
-            </FadeUp>
+            </div>
           ))}
         </div>
       </div>

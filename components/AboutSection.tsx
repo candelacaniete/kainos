@@ -5,9 +5,9 @@ import TeapotWatermark from '@/components/TeapotWatermark';
 export default function AboutSection() {
   return (
     <section className="section section--light section--about" id="nosotros">
-      <TeapotWatermark variant="integrated" />
       <div className="container about">
         <FadeUp className="about__text">
+          <TeapotWatermark variant="accent" />
           <span className="label">DESDE 1980</span>
           <h2 className="section__title">Tradición que se disfruta</h2>
           <span className="star-icon" aria-hidden="true">
@@ -32,9 +32,9 @@ export default function AboutSection() {
           <Image
             src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800&q=80"
             alt="Interior de la heladería Kainos con vitrina de helados artesanales"
-            width={520}
-            height={640}
-            sizes="(max-width: 768px) 100vw, 42vw"
+            width={600}
+            height={450}
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </FadeUp>
       </div>

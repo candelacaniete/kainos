@@ -111,7 +111,6 @@ ul {
 
 .link-arrow:hover {
   color: var(--color-gold-hover);
-  transform: translateX(4px);
 }
 
 /* ---- Buttons ---- */
@@ -138,7 +137,12 @@ ul {
 
 .btn--primary:hover {
   background: var(--color-gold-hover);
-  transform: translateY(-2px);
+}
+
+.btn--fit {
+  width: fit-content;
+  padding-left: 1.35rem;
+  padding-right: 1.35rem;
 }
 
 .btn--outline {
@@ -197,18 +201,6 @@ ul {
   z-index: 0;
 }
 
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(75, 46, 32, 0.82) 0%,
-    rgba(75, 46, 32, 0.55) 50%,
-    rgba(75, 46, 32, 0.7) 100%
-  );
-  z-index: 1;
-}
-
 /* ---- Navigation ---- */
 .nav {
   position: fixed;
@@ -233,8 +225,13 @@ ul {
 .logo {
   width: auto;
   height: auto;
-  max-height: 52px;
   object-fit: contain;
+}
+
+.nav__logo-img {
+  max-height: 76px;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
 }
 
 .nav__menu {
@@ -299,15 +296,17 @@ ul {
   font-weight: 500;
   line-height: 1.15;
   margin-bottom: 1.5rem;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.35);
 }
 
 .hero__subtitle {
   font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   font-weight: 300;
   line-height: 1.7;
-  opacity: 0.9;
+  opacity: 0.95;
   margin-bottom: 2.5rem;
   max-width: 480px;
+  text-shadow: 0 1px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================================
@@ -331,51 +330,50 @@ ul {
 }
 
 .section--rituals {
-  padding: clamp(6rem, 14vw, 10rem) 0;
+  padding: var(--section-padding) 0;
 }
 
 .section--about {
-  padding: clamp(6rem, 14vw, 10rem) 0;
-  overflow: hidden;
+  padding: var(--section-padding) 0;
 }
 
 .section--locations {
-  padding: clamp(6rem, 14vw, 10rem) 0;
-  overflow: hidden;
+  padding: var(--section-padding) 0;
 }
 
 /* ============================================
-   NOSOTROS — Editorial
+   NOSOTROS
    ============================================ */
 .about {
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: clamp(3rem, 8vw, 7rem);
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 5vw, 4rem);
   align-items: center;
-  position: relative;
-  z-index: 2;
 }
 
 .about__text {
   position: relative;
-  z-index: 2;
-  max-width: 400px;
-  padding-right: clamp(1rem, 3vw, 2rem);
+  max-width: 440px;
+}
+
+.about__text > :not(.teapot-watermark) {
+  position: relative;
+  z-index: 1;
 }
 
 .about__body p {
   font-size: 0.95rem;
   font-weight: 300;
-  line-height: 2;
+  line-height: 1.85;
   color: var(--color-copper);
 }
 
 .about__body p + p {
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 }
 
 .about__text .link-arrow {
-  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  margin-top: 2rem;
 }
 
 .about__photo img {
@@ -383,31 +381,22 @@ ul {
   height: auto;
   display: block;
   object-fit: cover;
-  border-radius: 0;
+  border-radius: var(--radius);
   box-shadow: none;
 }
 
-/* ---- Teapot Watermark ---- */
+/* ---- Tetera grabada (integrada, sutil) ---- */
 .teapot-watermark {
   position: absolute;
   pointer-events: none;
   z-index: 0;
 }
 
-.teapot-watermark--default {
-  left: -8%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: clamp(280px, 38vw, 480px);
-  opacity: 0.07;
-}
-
-.teapot-watermark--integrated {
-  left: -18%;
-  top: 42%;
-  transform: translateY(-50%);
-  width: clamp(380px, 52vw, 720px);
-  opacity: 0.065;
+.teapot-watermark--accent {
+  left: -28%;
+  top: 8%;
+  width: clamp(220px, 32vw, 340px);
+  opacity: 0.055;
 }
 
 .teapot-watermark__img {
@@ -418,39 +407,37 @@ ul {
 }
 
 /* ============================================
-   PEQUEÑOS RITUALES — Editorial
+   PEQUEÑOS RITUALES
    ============================================ */
 .rituals__header {
   text-align: center;
-  margin-bottom: clamp(4rem, 8vw, 6.5rem);
+  margin-bottom: clamp(3.5rem, 7vw, 5rem);
 }
 
-.rituals__columns {
+.rituals__composition {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: clamp(2rem, 4vw, 3.5rem);
+  gap: clamp(2rem, 4vw, 3rem);
   align-items: start;
 }
 
-.rituals__column {
+.rituals__item {
   text-align: center;
 }
 
 .rituals__illus {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  height: 80px;
-  margin-bottom: clamp(2rem, 4vw, 3rem);
+  height: clamp(140px, 16vw, 180px);
+  margin-bottom: clamp(2rem, 4vw, 2.75rem);
 }
 
 .rituals__illus-img {
   width: auto;
-  height: 80px;
-  max-width: 100px;
+  height: clamp(140px, 16vw, 180px);
+  max-width: 200px;
   object-fit: contain;
-  opacity: 0.88;
-  transition: opacity 0.5s ease;
 }
 
 .rituals__title {
@@ -458,8 +445,7 @@ ul {
   font-size: 1.2rem;
   font-weight: 500;
   color: var(--color-cream);
-  margin-bottom: 1.25rem;
-  transition: color 0.5s ease;
+  margin-bottom: 1rem;
 }
 
 .rituals__text {
@@ -467,194 +453,144 @@ ul {
   font-weight: 300;
   line-height: 1.85;
   color: var(--color-text-muted);
-  margin-bottom: clamp(2rem, 4vw, 2.75rem);
-  max-width: 220px;
+  margin-bottom: clamp(2rem, 4vw, 2.5rem);
+  max-width: 240px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .rituals__link {
-  display: inline-block;
   font-size: 0.68rem;
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-gold);
-  padding-bottom: 3px;
-  position: relative;
-  transition: color 0.5s ease;
-}
-
-.rituals__link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 1px;
-  background: var(--color-gold);
-  transition: width 0.5s ease;
-}
-
-.rituals__column:hover .rituals__title {
-  color: var(--color-beige);
-}
-
-.rituals__column:hover .rituals__illus-img {
-  opacity: 1;
-}
-
-.rituals__column:hover .rituals__link::after {
-  width: 100%;
 }
 
 /* ============================================
-   ENCONTRANOS — Editorial
+   ENCONTRANOS
    ============================================ */
 .locations {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: clamp(3rem, 8vw, 7rem);
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
-.locations__text {
-  position: relative;
-  z-index: 2;
-  max-width: 380px;
-  padding-right: clamp(1rem, 3vw, 2rem);
-}
-
-.locations__text p {
-  font-size: 0.95rem;
-  line-height: 2;
-  color: var(--color-copper);
-  margin-bottom: 0;
-}
-
-.locations__text .link-arrow {
-  margin-top: clamp(2rem, 4vw, 3rem);
-}
-
-.locations__photos {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: clamp(1.25rem, 2.5vw, 2rem);
+  grid-template-columns: minmax(260px, 380px) 1fr;
+  gap: clamp(2rem, 4vw, 3rem);
   align-items: start;
 }
 
-.locations__photo img {
+.locations__intro {
+  max-width: 380px;
+  padding-top: 0.5rem;
+}
+
+.locations__intro p {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--color-copper);
+}
+
+.locations__intro .link-arrow {
+  margin-top: 1.75rem;
+}
+
+.locations__gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 2vw, 1.25rem);
+  width: 100%;
+}
+
+.locations__frame img {
   width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
-  border-radius: 0;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
   box-shadow: none;
 }
 
-.locations__photo--secondary {
-  margin-top: clamp(2rem, 5vw, 4rem);
-}
-
 /* ============================================
-   FOOTER — Editorial
+   FOOTER
    ============================================ */
 .footer {
   background-color: var(--color-cream);
   background-image:
     url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d9c3a3' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  padding: clamp(5rem, 10vw, 7rem) 0 clamp(2rem, 4vw, 3rem);
+  padding: clamp(4.5rem, 9vw, 6.5rem) 0 clamp(2rem, 4vw, 2.5rem);
 }
 
-.footer__main {
-  display: grid;
-  grid-template-columns: 1.2fr 0.9fr 1.1fr;
-  gap: clamp(2.5rem, 5vw, 4rem);
-  align-items: start;
-  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
 }
 
 .footer__logo-img {
-  max-height: 72px;
+  max-height: 88px;
   width: auto;
-  margin-bottom: 1.75rem;
 }
 
 .footer__tagline {
-  font-size: 0.9rem;
-  font-weight: 300;
-  line-height: 1.85;
-  color: var(--color-copper);
-  max-width: 280px;
-}
-
-.footer__links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.footer__links a {
-  font-size: 0.82rem;
+  font-family: var(--font-serif);
+  font-size: 1rem;
   font-weight: 400;
-  letter-spacing: 0.06em;
+  font-style: italic;
+  line-height: 1.7;
   color: var(--color-copper);
-  transition: color 0.4s ease;
+  max-width: 420px;
 }
 
-.footer__links a:hover {
-  color: var(--color-gold);
-}
-
-.footer__contact {
+.footer__nav,
+.footer__meta {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem 0.65rem;
 }
 
-.footer__contact li a,
-.footer__contact li span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  font-size: 0.82rem;
+.footer__nav a,
+.footer__meta a,
+.footer__meta span {
+  font-size: 0.78rem;
   font-weight: 300;
-  line-height: 1.5;
+  letter-spacing: 0.04em;
   color: var(--color-copper);
 }
 
-.footer__contact li a {
+.footer__nav a,
+.footer__meta a {
   transition: color 0.4s ease;
 }
 
-.footer__contact li a:hover {
+.footer__nav a:hover,
+.footer__meta a:hover {
   color: var(--color-gold);
 }
 
-.footer__contact svg {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-  color: var(--color-gold);
-  opacity: 0.85;
+.footer__sep {
+  color: var(--color-beige);
+  opacity: 0.75;
+  user-select: none;
 }
 
 .footer__rule {
   border: none;
   border-top: 1px solid var(--color-gold);
-  opacity: 0.45;
-  margin: 0 0 1.5rem;
+  opacity: 0.4;
+  width: 100%;
+  max-width: 480px;
+  margin: 1rem 0 0.5rem;
 }
 
 .footer__copy {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--color-copper);
-  opacity: 0.7;
-  text-align: center;
+  opacity: 0.65;
 }
 
 /* ============================================
@@ -685,32 +621,27 @@ ul {
   }
 }
 
-/* Stagger children in rituals columns */
-.rituals__columns .fade-up:nth-child(2) { transition-delay: 0.1s; }
-.rituals__columns .fade-up:nth-child(3) { transition-delay: 0.2s; }
-.rituals__columns .fade-up:nth-child(4) { transition-delay: 0.3s; }
-
 /* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
-  .rituals__columns {
+  .rituals__composition {
     grid-template-columns: repeat(2, 1fr);
     gap: clamp(3rem, 6vw, 4rem) clamp(2rem, 4vw, 3rem);
   }
 
-  .about,
+  .about {
+    grid-template-columns: 1fr;
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  .about__photo {
+    order: -1;
+  }
+
   .locations {
     grid-template-columns: 1fr;
-    gap: clamp(4rem, 8vw, 5rem);
-  }
-
-  .footer__main {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .footer__col--contact {
-    grid-column: span 2;
+    gap: clamp(2.5rem, 5vw, 3rem);
   }
 }
 
@@ -752,53 +683,24 @@ ul {
     padding-bottom: 4rem;
   }
 
-  .teapot-watermark--integrated {
-    left: -25%;
-    width: clamp(300px, 70vw, 520px);
-    opacity: 0.05;
-  }
-
-  .teapot-watermark--default {
-    width: clamp(220px, 50vw, 360px);
-    opacity: 0.05;
+  .teapot-watermark--accent {
+    left: -18%;
+    width: clamp(180px, 45vw, 280px);
+    opacity: 0.045;
   }
 }
 
 @media (max-width: 480px) {
-  .rituals__columns {
+  .rituals__composition {
     grid-template-columns: 1fr;
     gap: 3.5rem;
   }
 
-  .locations__photos {
+  .locations__gallery {
     grid-template-columns: 1fr;
   }
 
-  .locations__photo--secondary {
-    margin-top: 1.5rem;
-  }
-
-  .footer__main {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .footer__col--contact {
-    grid-column: auto;
-  }
-
-  .footer__tagline {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .footer__logo-img {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .footer__contact li a,
-  .footer__contact li span {
-    justify-content: center;
+  .nav__logo-img {
+    max-height: 60px;
   }
 }
