@@ -1,17 +1,20 @@
 import Image from 'next/image';
 
 type TeapotWatermarkProps = {
-  variant?: 'accent';
+  small?: boolean;
 };
 
-export default function TeapotWatermark({ variant = 'accent' }: TeapotWatermarkProps) {
+export default function TeapotWatermark({ small = false }: TeapotWatermarkProps) {
   return (
-    <div className={`teapot-watermark teapot-watermark--${variant}`} aria-hidden="true">
+    <div
+      className={`teapot-watermark${small ? ' teapot-watermark--small' : ''}`}
+      aria-hidden="true"
+    >
       <Image
         src="/images/teapot.png"
         alt=""
-        width={320}
-        height={260}
+        width={small ? 140 : 320}
+        height={small ? 114 : 260}
         className="teapot-watermark__img"
       />
     </div>

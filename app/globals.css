@@ -1,5 +1,5 @@
 /* ============================================
-   KAINOS — Design System
+   KAINOS — Design System (Mockup)
    ============================================ */
 
 :root {
@@ -10,7 +10,6 @@
   --color-gold: #E6A75B;
   --color-gold-hover: #d4954a;
   --color-text-dark: #3a2318;
-  --color-text-light: #F3E7D6;
   --color-text-muted: #c9b49a;
 
   --font-serif: var(--font-playfair), Georgia, serif;
@@ -23,7 +22,6 @@
   --section-padding: clamp(4rem, 8vw, 7rem);
 }
 
-/* ---- Reset ---- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -106,7 +104,6 @@ ul {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--color-gold);
-  transition: color var(--transition), transform var(--transition);
 }
 
 .link-arrow:hover {
@@ -127,32 +124,27 @@ ul {
   border-radius: var(--radius-btn);
   border: none;
   cursor: pointer;
-  transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
 }
 
 .btn--primary {
   background: var(--color-gold);
   color: var(--color-dark);
+  width: fit-content;
 }
 
 .btn--primary:hover {
   background: var(--color-gold-hover);
 }
 
-.btn--fit {
-  width: fit-content;
-  padding-left: 1.35rem;
-  padding-right: 1.35rem;
-}
-
 .btn--outline {
   background: transparent;
   color: var(--color-cream);
   border: 1.5px solid var(--color-beige);
+  border-radius: 999px;
 }
 
 .btn--outline:hover {
-  background: rgba(243, 231, 214, 0.1);
   border-color: var(--color-gold);
   color: var(--color-gold);
 }
@@ -173,7 +165,6 @@ ul {
   height: 20px;
 }
 
-/* ---- Container ---- */
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -201,6 +192,19 @@ ul {
   z-index: 0;
 }
 
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(45, 28, 18, 0.72) 0%,
+    rgba(45, 28, 18, 0.45) 42%,
+    rgba(45, 28, 18, 0.2) 68%,
+    rgba(45, 28, 18, 0.05) 100%
+  );
+  z-index: 1;
+}
+
 /* ---- Navigation ---- */
 .nav {
   position: fixed;
@@ -208,36 +212,52 @@ ul {
   left: 0;
   right: 0;
   z-index: 100;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
-  padding: 1.25rem clamp(1.25rem, 4vw, 2.5rem);
+  padding: 1.5rem clamp(1.25rem, 4vw, 2.5rem);
   gap: 1rem;
   transition: background var(--transition), backdrop-filter var(--transition);
 }
 
 .nav__logo {
   display: flex;
-  align-items: center;
-  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-self: start;
 }
 
-.logo {
-  width: auto;
-  height: auto;
-  object-fit: contain;
+.nav__stars {
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  color: var(--color-gold);
+  margin-bottom: 0.15rem;
 }
 
-.nav__logo-img {
-  max-height: 76px;
-  filter: brightness(0) invert(1);
-  opacity: 0.95;
+.nav__brand {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  color: var(--color-cream);
+}
+
+.nav__tagline {
+  font-size: 0.5rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-top: 0.2rem;
+  color: var(--color-cream);
 }
 
 .nav__menu {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: clamp(1rem, 2.5vw, 2rem);
+  justify-self: center;
 }
 
 .nav__menu a {
@@ -256,7 +276,7 @@ ul {
 }
 
 .nav__cta {
-  flex-shrink: 0;
+  justify-self: end;
 }
 
 .nav__toggle {
@@ -268,6 +288,7 @@ ul {
   cursor: pointer;
   padding: 4px;
   z-index: 20;
+  justify-self: end;
 }
 
 .nav__toggle span {
@@ -275,10 +296,8 @@ ul {
   width: 24px;
   height: 2px;
   background: var(--color-cream);
-  transition: var(--transition);
 }
 
-/* ---- Hero Content ---- */
 .hero__content {
   position: relative;
   z-index: 5;
@@ -296,21 +315,19 @@ ul {
   font-weight: 500;
   line-height: 1.15;
   margin-bottom: 1.5rem;
-  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.35);
 }
 
 .hero__subtitle {
   font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   font-weight: 300;
   line-height: 1.7;
-  opacity: 0.95;
+  opacity: 0.9;
   margin-bottom: 2.5rem;
   max-width: 480px;
-  text-shadow: 0 1px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================================
-   SECTIONS — Shared
+   SECTIONS
    ============================================ */
 .section {
   position: relative;
@@ -329,74 +346,80 @@ ul {
   color: var(--color-cream);
 }
 
-.section--rituals {
-  padding: var(--section-padding) 0;
+.section--cta {
+  background-color: var(--color-dark);
+  padding-bottom: 0;
 }
 
-.section--about {
-  padding: var(--section-padding) 0;
-}
-
-.section--locations {
-  padding: var(--section-padding) 0;
-}
-
-/* ============================================
-   NOSOTROS
-   ============================================ */
-.about {
+.section__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(2.5rem, 5vw, 4rem);
+  gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
-.about__text {
+.section__text {
   position: relative;
-  max-width: 440px;
+  z-index: 2;
 }
 
-.about__text > :not(.teapot-watermark) {
-  position: relative;
+.section__text p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--color-copper);
+  margin-bottom: 0.75rem;
+}
+
+.section__text p:last-of-type {
+  margin-bottom: 0;
+}
+
+.section__image img {
+  border-radius: var(--radius);
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.section__images-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.section__images-duo img {
+  border-radius: var(--radius);
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+
+.section__header {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* ---- Tetera grabada ---- */
+.teapot-watermark {
+  position: absolute;
+  left: -2%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(200px, 28vw, 380px);
+  opacity: 0.06;
+  pointer-events: none;
   z-index: 1;
 }
 
-.about__body p {
-  font-size: 0.95rem;
-  font-weight: 300;
-  line-height: 1.85;
-  color: var(--color-copper);
-}
-
-.about__body p + p {
-  margin-top: 1.25rem;
-}
-
-.about__text .link-arrow {
-  margin-top: 2rem;
-}
-
-.about__photo img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  border-radius: var(--radius);
-  box-shadow: none;
-}
-
-/* ---- Tetera grabada (integrada, sutil) ---- */
-.teapot-watermark {
-  position: absolute;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.teapot-watermark--accent {
-  left: -28%;
-  top: 8%;
-  width: clamp(220px, 32vw, 340px);
-  opacity: 0.055;
+.teapot-watermark--small {
+  left: auto;
+  right: 10%;
+  top: 28%;
+  transform: none;
+  width: 110px;
+  opacity: 0.05;
 }
 
 .teapot-watermark__img {
@@ -406,191 +429,102 @@ ul {
   mix-blend-mode: multiply;
 }
 
+.teapot-watermark--small .teapot-watermark__img {
+  mix-blend-mode: soft-light;
+}
+
 /* ============================================
    PEQUEÑOS RITUALES
    ============================================ */
-.rituals__header {
-  text-align: center;
-  margin-bottom: clamp(3.5rem, 7vw, 5rem);
-}
-
-.rituals__composition {
+.rituals-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: clamp(2rem, 4vw, 3rem);
-  align-items: start;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
-.rituals__item {
+.rituals-grid__item {
   text-align: center;
 }
 
-.rituals__illus {
+.rituals-grid__icon {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  height: clamp(140px, 16vw, 180px);
-  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 1.5rem;
+  min-height: 100px;
 }
 
-.rituals__illus-img {
+.rituals-grid__img {
   width: auto;
-  height: clamp(140px, 16vw, 180px);
-  max-width: 200px;
+  height: 100px;
+  max-width: 120px;
   object-fit: contain;
 }
 
-.rituals__title {
+.rituals-grid__title {
   font-family: var(--font-serif);
   font-size: 1.2rem;
   font-weight: 500;
-  color: var(--color-cream);
-  margin-bottom: 1rem;
+  color: var(--color-beige);
+  margin-bottom: 0.75rem;
 }
 
-.rituals__text {
-  font-size: 0.88rem;
-  font-weight: 300;
-  line-height: 1.85;
+.rituals-grid__text {
+  font-size: 0.85rem;
+  line-height: 1.6;
   color: var(--color-text-muted);
-  margin-bottom: clamp(2rem, 4vw, 2.5rem);
-  max-width: 240px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 1.25rem;
 }
 
-.rituals__link {
-  font-size: 0.68rem;
-  font-weight: 400;
-  letter-spacing: 0.18em;
+.rituals-grid__link {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--color-gold);
 }
 
 /* ============================================
-   ENCONTRANOS
+   CTA + FOOTER
    ============================================ */
-.locations {
-  display: grid;
-  grid-template-columns: minmax(260px, 380px) 1fr;
-  gap: clamp(2rem, 4vw, 3rem);
-  align-items: start;
+.cta__content {
+  text-align: center;
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  position: relative;
+  z-index: 2;
 }
 
-.locations__intro {
-  max-width: 380px;
-  padding-top: 0.5rem;
+.cta__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 500;
+  color: var(--color-cream);
+  margin-bottom: 2rem;
 }
 
-.locations__intro p {
-  font-size: 0.95rem;
-  line-height: 1.85;
-  color: var(--color-copper);
-}
-
-.locations__intro .link-arrow {
-  margin-top: 1.75rem;
-}
-
-.locations__gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(1rem, 2vw, 1.25rem);
-  width: 100%;
-}
-
-.locations__frame img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radius);
-  box-shadow: none;
-}
-
-/* ============================================
-   FOOTER
-   ============================================ */
 .footer {
-  background-color: var(--color-cream);
-  background-image:
-    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d9c3a3' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  padding: clamp(4.5rem, 9vw, 6.5rem) 0 clamp(2rem, 4vw, 2.5rem);
+  border-top: 1px solid rgba(217, 195, 163, 0.15);
+  padding: 2rem 0;
 }
 
 .footer__inner {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 1.5rem;
-}
-
-.footer__logo-img {
-  max-height: 88px;
-  width: auto;
-}
-
-.footer__tagline {
-  font-family: var(--font-serif);
-  font-size: 1rem;
-  font-weight: 400;
-  font-style: italic;
-  line-height: 1.7;
-  color: var(--color-copper);
-  max-width: 420px;
-}
-
-.footer__nav,
-.footer__meta {
-  display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0.25rem 0.65rem;
+  gap: 1rem;
 }
 
-.footer__nav a,
-.footer__meta a,
-.footer__meta span {
-  font-size: 0.78rem;
-  font-weight: 300;
-  letter-spacing: 0.04em;
-  color: var(--color-copper);
-}
-
-.footer__nav a,
-.footer__meta a {
-  transition: color 0.4s ease;
-}
-
-.footer__nav a:hover,
-.footer__meta a:hover {
-  color: var(--color-gold);
-}
-
-.footer__sep {
-  color: var(--color-beige);
-  opacity: 0.75;
-  user-select: none;
-}
-
-.footer__rule {
-  border: none;
-  border-top: 1px solid var(--color-gold);
-  opacity: 0.4;
-  width: 100%;
-  max-width: 480px;
-  margin: 1rem 0 0.5rem;
+.footer__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--color-cream);
 }
 
 .footer__copy {
-  font-size: 0.65rem;
-  font-weight: 300;
-  letter-spacing: 0.1em;
-  color: var(--color-copper);
-  opacity: 0.65;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
 }
 
 /* ============================================
@@ -625,27 +559,16 @@ ul {
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
-  .rituals__composition {
+  .rituals-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: clamp(3rem, 6vw, 4rem) clamp(2rem, 4vw, 3rem);
-  }
-
-  .about {
-    grid-template-columns: 1fr;
-    gap: clamp(2.5rem, 5vw, 3.5rem);
-  }
-
-  .about__photo {
-    order: -1;
-  }
-
-  .locations {
-    grid-template-columns: 1fr;
-    gap: clamp(2.5rem, 5vw, 3rem);
   }
 }
 
 @media (max-width: 768px) {
+  .nav {
+    grid-template-columns: 1fr auto;
+  }
+
   .nav__toggle {
     display: flex;
   }
@@ -665,42 +588,51 @@ ul {
     backdrop-filter: blur(10px);
     transition: right var(--transition);
     z-index: 15;
+    justify-self: auto;
   }
 
   .nav__menu.open {
     right: 0;
   }
 
-  .nav__menu a {
-    font-size: 0.85rem;
-  }
-
   .nav__cta {
     display: none;
+  }
+
+  .section__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section__image {
+    order: -1;
   }
 
   .hero__content {
     padding-bottom: 4rem;
   }
 
-  .teapot-watermark--accent {
-    left: -18%;
-    width: clamp(180px, 45vw, 280px);
-    opacity: 0.045;
+  .teapot-watermark {
+    width: 160px;
+    left: -8%;
+    opacity: 0.04;
   }
 }
 
 @media (max-width: 480px) {
-  .rituals__composition {
-    grid-template-columns: 1fr;
-    gap: 3.5rem;
-  }
-
-  .locations__gallery {
+  .rituals-grid {
     grid-template-columns: 1fr;
   }
 
-  .nav__logo-img {
-    max-height: 60px;
+  .section__images-duo {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer__logo {
+    align-items: center;
   }
 }

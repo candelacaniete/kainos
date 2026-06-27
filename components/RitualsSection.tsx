@@ -30,28 +30,27 @@ const rituals = [
 
 export default function RitualsSection() {
   return (
-    <section className="section section--dark section--rituals" id="rituales">
+    <section className="section section--dark" id="rituales">
       <div className="container">
-        <FadeUp className="rituals__header">
+        <FadeUp className="section__header">
           <h2 className="section__title section__title--light">Pequeños rituales</h2>
           <span className="label label--gold">ELEGÍ TU MOMENTO FAVORITO</span>
         </FadeUp>
-
-        <div className="rituals__composition">
+        <div className="rituals-grid">
           {rituals.map((ritual) => (
-            <div key={ritual.title} className="rituals__item">
-              <div className="rituals__illus">
+            <div key={ritual.title} className="rituals-grid__item">
+              <div className="rituals-grid__icon">
                 <Image
                   src={ritual.image}
                   alt=""
-                  width={180}
-                  height={160}
-                  className="rituals__illus-img"
+                  width={120}
+                  height={120}
+                  className="rituals-grid__img"
                 />
               </div>
-              <h3 className="rituals__title">{ritual.title}</h3>
-              <p className="rituals__text">{ritual.text}</p>
-              <a href="#" className="rituals__link">
+              <h3 className="rituals-grid__title">{ritual.title}</h3>
+              <p className="rituals-grid__text">{ritual.text}</p>
+              <a href="#" className="rituals-grid__link">
                 {ritual.link}
               </a>
             </div>

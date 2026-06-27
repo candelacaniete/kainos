@@ -1,8 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Logo from '@/components/Logo';
-import TeapotIcon from '@/components/TeapotIcon';
+import BagIcon from '@/components/BagIcon';
 
 const navLinks = [
   { href: '#inicio', label: 'INICIO' },
@@ -36,7 +35,9 @@ export default function Nav() {
       }
     >
       <a href="#inicio" className="nav__logo">
-        <Logo priority className="nav__logo-img" />
+        <span className="nav__stars">★ ★ ★</span>
+        <span className="nav__brand">KAINOS</span>
+        <span className="nav__tagline">— HELADO ARTESANAL —</span>
       </a>
 
       <button
@@ -60,8 +61,8 @@ export default function Nav() {
         ))}
       </ul>
 
-      <a href="#contacto" className="btn btn--outline btn--fit nav__cta">
-        <TeapotIcon />
+      <a href="#contacto" className="btn btn--outline nav__cta">
+        <BagIcon />
         PEDÍ TU FAVORITO
       </a>
     </nav>
