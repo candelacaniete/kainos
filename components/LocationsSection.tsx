@@ -4,15 +4,12 @@ import TeapotWatermark from '@/components/TeapotWatermark';
 
 export default function LocationsSection() {
   return (
-    <section className="section section--light section--grabado" id="locales">
+    <section className="section section--light section--grabado section--locales" id="locales">
       <TeapotWatermark />
       <div className="container section__grid">
         <FadeUp className="section__text">
           <span className="label">NUESTROS LOCALES</span>
           <h2 className="section__title">Encontranos</h2>
-          <span className="star-icon" aria-hidden="true">
-            ★
-          </span>
           <p>Vení a disfrutar de tu momento Kainos en cualquiera de nuestros locales.</p>
           <a href="#locales" className="link-arrow">
             VER LOCALES →

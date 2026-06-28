@@ -431,6 +431,37 @@ ul {
   text-shadow: 0 0 14px rgba(229, 210, 187, 0.95);
 }
 
+.section--locales .label {
+  color: #3a2318;
+  font-weight: 800;
+  opacity: 1;
+  text-shadow: none;
+}
+
+.section--locales .section__title {
+  color: #2a1810;
+  text-shadow: none;
+}
+
+.section--locales .section__text p {
+  color: #2a1810;
+  font-weight: 500;
+  opacity: 1;
+  text-shadow: none;
+}
+
+.section--locales .link-arrow {
+  color: #4B2E20;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  opacity: 1;
+}
+
+.section--locales .link-arrow:hover {
+  color: #26180e;
+}
+
 .section__text p:last-of-type {
   margin-bottom: 0;
 }
