@@ -27,7 +27,7 @@ export default function LocationsSection() {
             sizes="(max-width: 768px) 50vw, 25vw"
           />
           <Image
-            src="https://images.unsplash.com/photo-1445118652557-621a83b0ef9e?w=500&q=80"
+            src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=500&q=80"
             alt="Salón del café Kainos con mesas de madera y luz cálida"
             width={280}
             height={350}
