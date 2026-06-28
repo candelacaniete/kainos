@@ -27,37 +27,39 @@ export default function Nav() {
 
   return (
     <nav className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
-      <a href="#inicio" className="nav__logo">
-        <span className="nav__stars">★ ★ ★</span>
-        <span className="nav__brand">KAINOS</span>
-        <span className="nav__tagline">— HELADO ARTESANAL —</span>
-      </a>
+      <div className="container nav__inner">
+        <a href="#inicio" className="nav__logo">
+          <span className="nav__stars">★ ★ ★</span>
+          <span className="nav__brand">KAINOS</span>
+          <span className="nav__tagline">— HELADO ARTESANAL —</span>
+        </a>
 
-      <button
-        className="nav__toggle"
-        aria-label="Abrir menú"
-        aria-expanded={menuOpen}
-        onClick={() => setMenuOpen((open) => !open)}
-      >
-        <span />
-        <span />
-        <span />
-      </button>
+        <button
+          className="nav__toggle"
+          aria-label="Abrir menú"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
 
-      <ul className={`nav__menu${menuOpen ? ' open' : ''}`}>
-        {navLinks.map((link) => (
-          <li key={link.label}>
-            <a href={link.href} onClick={closeMenu}>
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+        <ul className={`nav__menu${menuOpen ? ' open' : ''}`}>
+          {navLinks.map((link) => (
+            <li key={link.label}>
+              <a href={link.href} onClick={closeMenu}>
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-      <a href="#contacto" className="btn btn--outline nav__cta">
-        <BagIcon />
-        PEDÍ TU FAVORITO
-      </a>
+        <a href="#contacto" className="btn btn--outline nav__cta">
+          <BagIcon />
+          PEDÍ TU FAVORITO
+        </a>
+      </div>
     </nav>
   );
 }
