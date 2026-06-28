@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="footer footer--cream" id="contacto">
+    <footer className="footer footer--dark" id="contacto">
       <div className="container footer__inner">
         <div className="footer__logo">
           <span className="nav__stars">★ ★ ★</span>
